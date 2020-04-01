@@ -149,6 +149,13 @@ function push() {
   do
     BUILD_TAGS="${BUILD_TAGS}-t ${INPUT_NAME}:${TAG} "
   done
+
+  echo "===================="
+  ls -l
+  echo "===================="
+  echo "command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
+  echo "===================="
+
   docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}
 
   for TAG in ${TAGS}
