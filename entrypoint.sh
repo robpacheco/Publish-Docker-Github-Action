@@ -150,11 +150,12 @@ function push() {
     BUILD_TAGS="${BUILD_TAGS}-t ${INPUT_NAME}:${TAG} "
   done
 
-  echo "===================="
-  ls -l
-  echo "===================="
-  echo "command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
-  echo "===================="
+  # echo "===================="
+  # ls -l
+  # echo "===================="
+  # echo "command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
+  # echo "===================="
+  echo "::debug:: command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
 
   docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}
 
