@@ -156,6 +156,8 @@ function push() {
   # echo "command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
   # echo "===================="
   echo "::debug:: command: docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}"
+  echo "::debug:: cwd: $(pwd)"
+  echo "::debug:: ls: $(ls -l)"
 
   docker build ${INPUT_BUILDOPTIONS} ${BUILDPARAMS} ${BUILD_TAGS} ${CONTEXT}
 
